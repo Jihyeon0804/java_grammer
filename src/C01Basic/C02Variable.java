@@ -124,9 +124,9 @@ public class C02Variable {
         // 두 수가 모두 정수이면 결과값이 정수일 것이다라고 java가 판단
         int a = 1;
         int b = 4;
-        double d3 = a/b;
-        System.out.println(a/b);            // 0
-        System.out.println(d3);             // 0.0 (a/b 연산한 값을 d에 할당한 것이기 때문에 똑같이 0)
+//        double d3 = a/b;
+//        System.out.println(a/b);            // 0
+//        System.out.println(d3);             // 0.0 (a/b 연산한 값을 d에 할당한 것이기 때문에 똑같이 0)
 
         double d4 = (double) a / b;
         System.out.println(d4);             // 0.25
