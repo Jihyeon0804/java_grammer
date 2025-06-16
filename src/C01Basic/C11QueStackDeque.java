@@ -32,7 +32,7 @@ public class C11QueStackDeque {
             linkedList.add(0, i);
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("LinkedList 값 중간 add 시 소요 시간 : " + (endTime - startTime));
+        System.out.println("LinkedList 값 중간 add 시 소요 시간 : " + (endTime - startTime));       // 195
 
         long startTime2 =  System.currentTimeMillis();
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -40,6 +40,6 @@ public class C11QueStackDeque {
             arrayList.add(0, i);
         }
         long endTime2 = System.currentTimeMillis();
-        System.out.println("ArrayList 값 중간 add 시 소요 시간 : " + (endTime2 - startTime2));
+        System.out.println("ArrayList 값 중간 add 시 소요 시간 : " + (endTime2 - startTime2));      // 556781
     }
 }
