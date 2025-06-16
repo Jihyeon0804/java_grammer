@@ -243,6 +243,14 @@ public class C06String {
             sb.append(st.charAt(i));
         }
         System.out.println(sb);
+
+        // 문자열 비교
+        String s4 = "hello";
+        String s5 = "dello";
+        String s6 = "hello";
+        System.out.println(s4.compareTo(s5));           // 양수
+        System.out.println(s5.compareTo(s4));           // 음수
+        System.out.println(s4.compareTo(s6));           // 0
         
         
         // 프로그래머스 - 문자열 밀기
