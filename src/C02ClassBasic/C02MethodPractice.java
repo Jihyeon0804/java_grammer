@@ -14,7 +14,7 @@ public class C02MethodPractice {
         }
     }
 
-    //    소수 판별기
+    //  소수 판별기
     public static boolean isPrime(int input) {
         if (input < 2) return false;
         for (int i = 2; i <= Math.sqrt(input); i++) {
