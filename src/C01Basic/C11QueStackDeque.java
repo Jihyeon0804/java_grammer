@@ -84,7 +84,7 @@ public class C11QueStackDeque {
         pq2.add(50);
         System.out.println(pq2.poll());      // add할 때 까지는 전체 정렬이 돼 있지 않음
         while (!pq2.isEmpty()) {
-            System.out.println(pq2.poll());      // 1개씩 poll할 때마다 최소값을 뽑아낸다. - O(log(n))
+            System.out.println(pq2.poll());      // 1개씩 poll할 때마다 최대값을 뽑아낸다. - O(log(n))
         }
         
         // 프로그래머스 - 더 맵게
