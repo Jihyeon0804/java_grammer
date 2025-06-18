@@ -74,7 +74,6 @@ public class C11QueStackDeque {
         }
         
         // 백준 - 최소 힙(1927)
-
         // 최대 힙
         Queue<Integer> pq2 = new PriorityQueue<>(Comparator.reverseOrder());
         pq2.add(30);
