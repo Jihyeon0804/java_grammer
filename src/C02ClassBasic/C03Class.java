@@ -32,15 +32,15 @@ public class C03Class {
 
         // 객체를 활용한 매출 계산
         // A 부서의 매출 : 10, 20, ...
-        MyCalCulatorInstance mi1 = new MyCalCulatorInstance();
+        MyCalculatorInstance mi1 = new MyCalculatorInstance();
         // MyCalCulatorInstance.sumAcc() : static이 없으므로 sumAcc는 호출이 불가 -> 객체로 만들어서 호출해야 함
         System.out.println(mi1.sumAcc(10));
         System.out.println(mi1.sumAcc(20));
 
 
         // B 부서의 매출 : 10, 20, ...
-        MyCalCulatorInstance mi2 = new MyCalCulatorInstance();
-        // MyCalCulatorInstance.sumAcc() : static이 없으므로 sumAcc는 호출이 불가 -> 객체로 만들어서 호출해야 함
+        MyCalculatorInstance mi2 = new MyCalculatorInstance();
+        // MyCalculatorInstance.sumAcc() : static이 없으므로 sumAcc는 호출이 불가 -> 객체로 만들어서 호출해야 함
         System.out.println(mi2.sumAcc(10));
         System.out.println(mi2.sumAcc(20));
     }
@@ -61,7 +61,7 @@ class MyCalculator {
     }
 }
 
-class MyCalCulatorInstance {
+class MyCalculatorInstance {
     int total = 0;
 
     public int sum(int a, int b) {
