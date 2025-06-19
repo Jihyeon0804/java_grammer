@@ -24,7 +24,8 @@ public class C08ClassPractice {
         //  사용자1이 사용자2에게 송금
         for (Account a : list) {
             if (account2.getAccountNumber().equals("987654321")) {
-
+                account1.setBalance(account1.getBalance() - 5000);
+                account2.setBalance(account2.getBalance() + 5000);
             }
         }
 
