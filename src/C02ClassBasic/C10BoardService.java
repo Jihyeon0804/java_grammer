@@ -63,7 +63,7 @@ public class C10BoardService {
                         System.out.println("회원 ID : " + author.getId());
                         System.out.println("회원 이메일 : " + author.getEmail());
                         System.out.println("회원 이름 : " + author.getName());
-                        int postSize = author.getPostList().isEmpty() ? 0 : author.getPostList().size();
+                        int postSize = author.getPostList().size();
                         System.out.println("작성 글 수 : " + postSize);
                     } else {
                         System.out.println("없는 회원 번호 입니다.");
@@ -135,7 +135,8 @@ class Author {
     private String name;
     private String email;
     private String password;
-    private List<Post> postList = new ArrayList<>();
+    // Author 객체에 본인이 작성한 게시글 목록인 postList 객체를 만들어 둠으로서 편의성 향상
+    private List<Post> postList;
 
     // 회원가입
     public Author(String name, String email, String password) {
@@ -143,6 +144,7 @@ class Author {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.postList = new ArrayList<>();
     }
 
 
@@ -169,13 +171,25 @@ class Author {
     public List<Post> getPostList() {
         return postList;
     }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", postCount=" + postList.size() +
+                '}';
+    }
 }
 
 class Post {
     private Long id;
-    private static Long static_id;
+    private static Long static_id = 0L;
     private String title;
     private String contents;
+    // 객체 안에 객체를 선언함으로서 post 객체에서 쉽게 author 객체에 접근 가능
     private Author author;
 //    private String authorEmail;
 
@@ -185,6 +199,7 @@ class Post {
         this.title = title;
         this.contents = contents;
         this.author = author;
+        this.author.getPostList().add(this);
 //        this.authorEmail = authorEmail;
     }
 
@@ -207,5 +222,6 @@ class Post {
     public Author getAuthor() {
         return author;
     }
+
 }
 
