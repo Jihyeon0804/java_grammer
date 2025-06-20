@@ -22,7 +22,7 @@ public class C13RecursiveCombiPermu {
         System.out.println(staticCount);        // 9
 
 
-        // 재귀 함수 예제 : 조합
+        // 조합
         List<Integer> myList = new ArrayList<>();
         myList.add(1);
         myList.add(2);
@@ -56,7 +56,7 @@ public class C13RecursiveCombiPermu {
 //        }
 //        System.out.println(doubleList2);
 
-        // 재귀 함수
+        // 조합
         combi(myList, new ArrayList<>(), doubleList2, 2, 0);
         System.out.println(doubleList2);
 
@@ -64,13 +64,13 @@ public class C13RecursiveCombiPermu {
         // 순열
         // 1, 2, 3, 4를 n개씩 뽑은 순열 구하기
         // [1, 2], [1, 3], [1, 4], [2, 1], ..., [4, 3]
-
         permu(myList, new ArrayList<>(), doubleList, 2, new boolean[myList.size()]);
         System.out.println(doubleList);
 
 
     }
 
+    // 순열
     static void permu(List<Integer> myList, List<Integer> list, List<List<Integer>> doubleList, int target, boolean[] visited) {
         if (list.size() == target) {
             doubleList.add(new ArrayList<>(list));      // doubleList.add(list); 아님 주의!!
@@ -87,6 +87,8 @@ public class C13RecursiveCombiPermu {
         }
     }
 
+    
+    // 조합
     static void combi(List<Integer> myList, List<Integer> list, List<List<Integer>> doubleList, int target, int start) {
         if (list.size() == target) {
             doubleList.add(new ArrayList<>(list));      // doubleList.add(list); 아님 주의!!
