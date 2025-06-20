@@ -10,7 +10,7 @@ public class C10BoardService {
     
 //        1.회원가입 : 이름, 이메일, 비밀번호, id값(auto_increment)
 //        2.회원 전체 목록 조회 : id, email
-//        3.회원 상세 조회(id로 조회) : id, email, name, password, 작성 글 수(
+//        3.회원 상세 조회(id로 조회) : id, email, name, password, 작성 글 수
 //        4.게시글 작성 : id, title, contents, 작성자Email (Author 객체 가능)
 //        5.게시물 목록 조회 : id(post), title
 //        6.게시물 상세 조회 (id로 조회) : id(post), title, contents, 작성자 email(작성자 이름으로 조회)
@@ -63,7 +63,6 @@ public class C10BoardService {
                         System.out.println("회원 ID : " + author.getId());
                         System.out.println("회원 이메일 : " + author.getEmail());
                         System.out.println("회원 이름 : " + author.getName());
-                        System.out.println("회원 비밀번호 : " + author.getPassword());
                         int postSize = author.getPostList().isEmpty() ? 0 : author.getPostList().size();
                         System.out.println("작성 글 수 : " + postSize);
                     } else {
@@ -129,8 +128,10 @@ public class C10BoardService {
 }
 
 class Author {
-    private int id;
-    private static int totalId;
+    // 일반적으로 클래스를 정의할 때 원시 자료형은 wrapper 클래스로 정의
+    private Long id;
+    // wrapper 클래스 Long 의 기본 값은 null 이기 때문에 값을 초기화 해 주어야 함
+    private static Long static_id = 0L;
     private String name;
     private String email;
     private String password;
@@ -138,19 +139,19 @@ class Author {
 
     // 회원가입
     public Author(String name, String email, String password) {
-        this.id = totalId++;
+        this.id = static_id++;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public static int getTotalId() {
-        return totalId;
+    public static Long getTotalId() {
+        return static_id;
     }
 
     public String getName() {
@@ -171,26 +172,28 @@ class Author {
 }
 
 class Post {
-    private int id;
-    private static int totalId;
+    private Long id;
+    private static Long static_id;
     private String title;
     private String contents;
     private Author author;
+//    private String authorEmail;
 
     // 게시글 작성
     public Post(int id, String title, String contents, Author author) {
-        this.id = totalId++;
+        this.id = static_id++;
         this.title = title;
         this.contents = contents;
         this.author = author;
+//        this.authorEmail = authorEmail;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public static int getTotalId() {
-        return totalId;
+    public static Long getTotalId() {
+        return static_id;
     }
 
     public String getTitle() {
