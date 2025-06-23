@@ -78,7 +78,7 @@ public class C13RecursiveCombiPermu {
         }
         for (int i = 0; i < myList.size(); i++) {
             if (!visited[i]) {
-                visited[i] = true;      // 자기 자신은 제외
+                visited[i] = true;      // 선택한 것은 제외
                 list.add(myList.get(i));
                 permu(myList, list, doubleList, target, visited);
                 list.remove(list.size() - 1);
@@ -96,7 +96,7 @@ public class C13RecursiveCombiPermu {
         }
         for (int i = start; i < myList.size(); i++) {
             list.add(myList.get(i));
-            combi(myList, list, doubleList, target, i + 1);
+            combi(myList, list, doubleList, target, i + 1); // 순서 상관X
             list.remove(list.size() - 1);
         }
     }
