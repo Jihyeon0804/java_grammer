@@ -73,7 +73,7 @@ public class C13RecursiveCombiPermu {
     // 순열
     static void permu(List<Integer> myList, List<Integer> list, List<List<Integer>> doubleList, int target, boolean[] visited) {
         if (list.size() == target) {
-            doubleList.add(new ArrayList<>(list));      // doubleList.add(list); 아님 주의!!
+            doubleList.add(new ArrayList<>(list));     // doubleList.add(list); 아님 주의!!
             return;
         }
         for (int i = 0; i < myList.size(); i++) {
