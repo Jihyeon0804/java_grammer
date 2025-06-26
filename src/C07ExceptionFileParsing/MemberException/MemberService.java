@@ -44,7 +44,7 @@ public class MemberService {
     // 로그인
     public void login(String email, String password) throws NoSuchElementException, IllegalArgumentException {
         Optional<Member> optionalMember = memberRepository.findByEmail(email);
-        if (!optionalMember.isPresent()) {
+        if (optionalMember.isEmpty()) {
             throw new NoSuchElementException("이메일을 잘못 입력하셨습니다.");
         }
         if (!optionalMember.get().getPassword().equals(password)) {
