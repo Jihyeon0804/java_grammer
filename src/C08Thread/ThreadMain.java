@@ -51,12 +51,5 @@ public class ThreadMain {
         }
         Thread.sleep(20000);
         System.out.println(Library.getBookCount());         // main 스레드가 실행 (순서 보장X)
-
-
-
-
-        
-
-
     }
 }
