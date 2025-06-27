@@ -11,7 +11,9 @@ public class C02Validation {
     public static void main(String[] args) throws IllegalAccessException {
 
         List<Member> memberList = new ArrayList<>();
+
         Scanner scan = new Scanner(System.in);
+
         while (true) {
             System.out.println("회원가입 서비스입니다.");
             System.out.print("이름을 입력해 주세요 : ");
@@ -23,7 +25,6 @@ public class C02Validation {
             validate(member);
             memberList.add(member);
             System.out.println(memberList);
-
         }
     }
 
@@ -50,7 +51,6 @@ public class C02Validation {
 @interface NotEmpty {
     // 어노테이션의 속성 정의 방식
     String message() default "this field cannot be empty!!!";
-
 }
 
 class Member {
