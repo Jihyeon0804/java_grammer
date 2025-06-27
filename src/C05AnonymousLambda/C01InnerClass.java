@@ -10,7 +10,7 @@ public class C01InnerClass {
     }
 }
 
-// (일반) 내부 클래스
+// 일반 클래스
 class MemberInnerClass {
     int a;
 
